@@ -9,6 +9,7 @@ public class MinijuegoController : MonoBehaviour
     public GameObject puertaSalida;
     public TMP_Text texto;
     public GameObject rayos;
+    public bool pruebaSuperada;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,8 +36,15 @@ public class MinijuegoController : MonoBehaviour
         puertaInicio.GetComponent<Animator>().SetTrigger("activado");
         puertaSalida.GetComponent<Animator>().SetTrigger("activado");
         yield return new WaitForSeconds(39f);
-        rayos.SetActive(true);
-        yield return new WaitForSeconds(3f);
-        rayos.SetActive(false);
+        if (!pruebaSuperada)
+        {
+            rayos.SetActive(true);
+        }
+    }
+    public void PruebaSuperada()
+    {
+        pruebaSuperada = true;
+        
+
     }
 }
