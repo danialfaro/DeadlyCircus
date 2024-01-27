@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class MenuManager : MonoBehaviour
 {
     public Animator menu_Animator;
-
     public Animator transicion_Animator;
+    public Animator jugador_Animator;
 
     public Button jugar;
     public Button opciones;
@@ -35,9 +35,12 @@ public class MenuManager : MonoBehaviour
 
     IEnumerator CambiarEscena()
     {
+        yield return new WaitForSeconds(1.5f);
+        jugador_Animator.SetBool("Muerto", true);
         yield return new WaitForSeconds(6f);
 
         transicion_Animator.SetTrigger("Salir");
+
 
         yield return new WaitForSeconds(0.5f);
         menu.SetActive(false);

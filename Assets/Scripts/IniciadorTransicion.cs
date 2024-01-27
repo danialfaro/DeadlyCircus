@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EjemploJuego : MonoBehaviour
+public class IniciadorTransicion : MonoBehaviour
 {
     public Animator transicion_Animator;
 

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TarodevController;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -21,6 +22,17 @@ public class Activador_Fuego : MonoBehaviour
         {
             animator.SetTrigger("Cerca");
             Debug.Log("Trigger activado");
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            if (GameManager.Instance.Pepe_Vivo)
+            {
+                GameManager.Instance.Morir();
+                personaje.GetComponent<PlayerController>().enabled = false;
+            }
         }
     }
 }
