@@ -13,6 +13,9 @@ namespace TarodevController
     /// </summary>
     public class PlayerController : MonoBehaviour, IPlayerController
     {
+        public SpriteRenderer sprite;
+        public Animator animator;
+
         // Public for external hooks
         public Vector3 Velocity { get; private set; }
         public FrameInput Input { get; private set; }
@@ -180,6 +183,8 @@ namespace TarodevController
                 // Apply bonus at the apex of a jump
                 var apexBonus = Mathf.Sign(Input.X) * _apexBonus * _apexPoint;
                 _currentHorizontalSpeed += apexBonus * Time.deltaTime;
+
+                sprite.flipX = Mathf.Sign(Input.X) < 0;
             }
             else
             {
@@ -192,6 +197,8 @@ namespace TarodevController
                 // Don't walk through walls
                 _currentHorizontalSpeed = 0;
             }
+
+            animator.SetBool("Walking", _currentHorizontalSpeed != 0);
         }
 
         #endregion
