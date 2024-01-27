@@ -13,18 +13,14 @@ public class DGT_PICTURESELECT : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E)&&isTrigger)
         {
-            Debug.Log("Intercat");
             if (correctAnswer)
             {
-                Debug.Log("Acertaste");
                 puerta.GetComponent<Animator>().SetTrigger("desactivado");
                 minijuegoController.pruebaSuperada = true;
             }
             else
             {
-                Debug.Log("fallaste");
                 rayos.SetActive(true);
-                
             }
         }
     }

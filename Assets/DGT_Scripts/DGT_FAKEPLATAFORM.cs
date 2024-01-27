@@ -3,12 +3,13 @@ using UnityEngine;
 public class DGT_FAKEPLATAFORM : MonoBehaviour
 {
     [SerializeField] Rigidbody2D rb2D;
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            Destroy(this.gameObject, 10);
+            Debug.Log("Player hit");
+            rb2D.gravityScale = 100;
+            Destroy(this.gameObject, 1);
         }
     }
 }
