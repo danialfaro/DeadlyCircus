@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DGT_PICTURESELECT : MonoBehaviour
+public class DGT_PICTURESELECT_CAJAS : MonoBehaviour
 {
     public bool isTrigger=false;
     public bool correctAnswer=false;
-    public GameObject rayos;
-    public MinijuegoController minijuegoController;
+    public MinijuegoController_Cajas minijuegoController_Cajas;
+    
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E)&&isTrigger)
@@ -16,12 +16,13 @@ public class DGT_PICTURESELECT : MonoBehaviour
             if (correctAnswer)
             {
                 Debug.Log("Acertaste");
-                minijuegoController.PruebaSuperada();
+                minijuegoController_Cajas.PruebaSuperada();
+                
             }
             else
             {
                 Debug.Log("fallaste");
-                rayos.SetActive(true);
+                minijuegoController_Cajas.PruebaFallida();
                 
             }
         }

@@ -111,10 +111,11 @@ GameObject:
   - component: {fileID: 337468253143017762}
   - component: {fileID: 7989352195894724137}
   - component: {fileID: 6231677157980448783}
+  - component: {fileID: 2487712248158517128}
   - component: {fileID: 3247934165804026607}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -226,8 +227,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbfb23717f7dee14688bccda60b77b9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 3247934165804026607}
   sprite: {fileID: 337468253143017762}
+  animator: {fileID: 3247934165804026607}
   _characterBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.65, y: 1.4, z: 0}
@@ -250,6 +251,27 @@ MonoBehaviour:
   _jumpBuffer: 0.1
   _jumpEndEarlyGravityModifier: 3
   _freeColliderIterations: 10
+--- !u!114 &2487712248158517128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2699050553794907863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18297356b7fd95143bd7f1dcad5705e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _anim: {fileID: 3247934165804026607}
+  _groundMask:
+    serializedVersion: 2
+    m_Bits: 8
+  _footsteps: []
+  _maxTilt: 0.1
+  _tiltSpeed: 1
+  _maxIdleSpeed: 2
+  _maxParticleFallSpeed: -40
 --- !u!95 &3247934165804026607
 Animator:
   serializedVersion: 5
