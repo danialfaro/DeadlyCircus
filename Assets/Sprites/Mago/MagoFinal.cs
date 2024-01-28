@@ -4,7 +4,9 @@ using UnityEngine;
 public class MagoFinal : MonoBehaviour
 {
 
+    public GameObject canvasCreditos;
     public AudioClip audioClipFinal;
+
     AudioSource audioSource;
     Animator animator;
 
@@ -43,5 +45,7 @@ public class MagoFinal : MonoBehaviour
 
         audioSource.clip = audioClipFinal;
         audioSource.Play();
+
+        canvasCreditos.SetActive(true);
     }
 }
