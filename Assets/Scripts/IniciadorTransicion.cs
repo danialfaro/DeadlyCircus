@@ -9,6 +9,7 @@ public class IniciadorTransicion : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        transicion_Animator.gameObject.SetActive(true);
         transicion_Animator.SetTrigger("Entrar");
     }
 

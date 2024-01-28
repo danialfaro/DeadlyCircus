@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TarodevController;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -36,6 +37,16 @@ public class GameManager : MonoBehaviour
     {
         transicion_Animator = GameObject.FindGameObjectWithTag("Transicion").GetComponent<Animator>();
         personaje = GameObject.FindGameObjectWithTag("Player");
+
+        transicion_Animator.gameObject.SetActive(true);
+    }
+
+    private void Update()
+    {
+        if(personaje.gameObject.transform.position.y < -15 && Pepe_Vivo)
+        {
+            Morir();
+        }
     }
 
     public void SetCheckpoint(Vector2 checkpointPosition, int check)
@@ -49,6 +60,7 @@ public class GameManager : MonoBehaviour
 
     public void Morir()
     {
+        personaje.GetComponent<PlayerController>().enabled = false;
         Pepe_Vivo = false;
         personaje.GetComponent<Animator>().SetBool("Muerto", true);
         StartCoroutine(Reinicio());

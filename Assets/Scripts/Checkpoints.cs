@@ -2,10 +2,15 @@ using UnityEngine;
 
 public class Checkpoints : MonoBehaviour
 {
-    public GameObject personaje;
+    GameObject personaje;
     public Animator animator;
     public int checkpoint;
     public bool activado = false;
+
+    private void Start()
+    {
+        personaje = GameObject.FindGameObjectWithTag("Player");
+    }
 
     // Update is called once per frame
     void Update()
