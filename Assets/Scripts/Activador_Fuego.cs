@@ -5,6 +5,7 @@ public class Activador_Fuego : MonoBehaviour
     public ParticleSystem firePS;
     public Animator animator;
     public AudioSource fire_SXF;
+    private bool activado = false;
 
     GameObject personaje;
 
@@ -22,7 +23,12 @@ public class Activador_Fuego : MonoBehaviour
         {
             animator.SetTrigger("Cerca");
             if (!firePS.isPlaying) firePS.Play();
-            fire_SXF.Play();
+            if(!activado)
+            {
+                fire_SXF.Play();
+                activado = true;
+            }
+            
             Debug.Log("Trigger activado");
         }
     }
