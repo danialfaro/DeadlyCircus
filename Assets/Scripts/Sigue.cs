@@ -9,11 +9,11 @@ public class Sigue : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Firefly"))
+        if (other.gameObject.CompareTag("Player"))
         {
             Debug.Log("Han colisionado");
-            transform.position = other.transform.position;
-            other.transform.SetParent(this.transform);
+            transform.position = other.transform.position + new Vector3(Random.Range(-1f,-1.5f), Random.Range(1f, 1.5f),0);
+            transform.SetParent(other.transform);
             count ++;
 
             if (count == 3)
