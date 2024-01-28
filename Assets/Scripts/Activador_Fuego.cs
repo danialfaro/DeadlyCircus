@@ -16,8 +16,7 @@ public class Activador_Fuego : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Mathf.Abs(personaje.transform.position.x - this.transform.position.x).ToString() + "  X");
-        Debug.Log(Mathf.Abs(personaje.transform.position.y - this.transform.position.y).ToString() + "  Y");
+
         if (Mathf.Abs(personaje.transform.position.x - this.transform.position.x) <= 3f && Mathf.Abs(personaje.transform.position.y - this.transform.position.y) <= 3f)
         {
             animator.SetTrigger("Cerca");
