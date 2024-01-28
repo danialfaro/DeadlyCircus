@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class activarCohetes : MonoBehaviour
 {
     public bool isTrigger = false;
     bool activado = false;
     public ParticleSystem cohetes;
+
+    public Animator transicion_Animator;
 
     Animator fireworks_anim;
 
@@ -24,6 +27,7 @@ public class activarCohetes : MonoBehaviour
             {
                 cohetes.Play();
                 fireworks_anim.SetBool("Fire", true);
+                StartCoroutine(Final());
             }
         }
     }
@@ -36,5 +40,15 @@ public class activarCohetes : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
             isTrigger = false;
+    }
+
+
+    IEnumerator Final()
+    {
+        yield return new WaitForSeconds(5f);
+        transicion_Animator.SetTrigger("Salir");
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
     }
 }

@@ -2562,7 +2562,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4653857850204852802, guid: 8e50df83010c92e4fbb7ce5ef89465b7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -30.599998
+      value: -31.7
       objectReference: {fileID: 0}
     - target: {fileID: 4653857850204852802, guid: 8e50df83010c92e4fbb7ce5ef89465b7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3162,7 +3162,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -100
+  m_SortingOrder: -200
   m_Sprite: {fileID: 21300000, guid: c5af8f8d927f14a46a8918112611407d, type: 3}
   m_Color: {r: 0.5283019, g: 0.5283019, b: 0.5283019, a: 1}
   m_FlipX: 0
@@ -3695,6 +3695,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2072112338}
     m_Modifications:
+    - target: {fileID: 4719516014025061415, guid: 6ade1daf09f8aea4e88dcff83daebd9c, type: 3}
+      propertyPath: transicion_Animator
+      value: 
+      objectReference: {fileID: 898538749}
     - target: {fileID: 6031519559435098073, guid: 6ade1daf09f8aea4e88dcff83daebd9c, type: 3}
       propertyPath: m_Name
       value: Caja_Fireworks
@@ -3970,7 +3974,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 226567446818652684, guid: 20c3bf4f926036e4889916e9e15f217d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -30.599998
+      value: -31.7
       objectReference: {fileID: 0}
     - target: {fileID: 226567446818652684, guid: 20c3bf4f926036e4889916e9e15f217d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7728,7 +7732,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7039974347036538104, guid: eca22ad817a898c45aa92506a988b271, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -35.6
+      value: -36.7
       objectReference: {fileID: 0}
     - target: {fileID: 7039974347036538104, guid: eca22ad817a898c45aa92506a988b271, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7801,7 +7805,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 479770660680982266, guid: 77c05611fcd84e14aa4cac9b133c6f04, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 492301033079890816, guid: 77c05611fcd84e14aa4cac9b133c6f04, type: 3}
       propertyPath: m_Camera
