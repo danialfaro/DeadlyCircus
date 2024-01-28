@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Sigue : MonoBehaviour
 {
-    private float count;
+    public float count;
     private void Update()
     {
         count = GameManager.Instance.contadorLuciernagas;
@@ -27,7 +27,7 @@ public class Sigue : MonoBehaviour
                 {
                     GameManager.Instance.Morir();
                 }
-                GameManager.Instance.contadorLuciernagas = 0;
+                
             }
         }
 

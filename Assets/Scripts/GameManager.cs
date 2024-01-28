@@ -68,6 +68,7 @@ public class GameManager : MonoBehaviour
         personaje.GetComponent<PlayerController>().enabled = false;
         Pepe_Vivo = false;
         personaje.GetComponent<Animator>().SetBool("Muerto", true);
+        contadorLuciernagas = 0;
         StartCoroutine(Reinicio());
     }
 
