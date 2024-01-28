@@ -5,6 +5,8 @@ using UnityEngine;
 public class Activar_pelota : MonoBehaviour
 {
     public GameObject pelota;
+    public bool final;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +22,14 @@ public class Activar_pelota : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            pelota.SetActive(!pelota.activeSelf);
+            if(final)
+            {
+                pelota.SetActive(false);
+            }
+            else
+            {
+                pelota.SetActive(!pelota.activeSelf);
+            }
         }
             
     }
