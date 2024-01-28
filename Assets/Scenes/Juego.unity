@@ -2615,6 +2615,14 @@ PrefabInstance:
       value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 2857886691774638533, guid: 3fdbaf3f917ea774eacad190eec862ac, type: 3}
+      propertyPath: correct_SFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d6c36cf9c70fa642a5c6097b51a05de, type: 3}
+    - target: {fileID: 2857886691774638533, guid: 3fdbaf3f917ea774eacad190eec862ac, type: 3}
+      propertyPath: playerMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: d50883a149acd1b469fc7db499189a20, type: 3}
+    - target: {fileID: 2857886691774638533, guid: 3fdbaf3f917ea774eacad190eec862ac, type: 3}
       propertyPath: puertaInicio
       value: 
       objectReference: {fileID: 210148735}
@@ -2622,6 +2630,10 @@ PrefabInstance:
       propertyPath: puertaSalida
       value: 
       objectReference: {fileID: 1879620617}
+    - target: {fileID: 2857886691774638533, guid: 3fdbaf3f917ea774eacad190eec862ac, type: 3}
+      propertyPath: suspense_SFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 2581ba74059c7ff41a042e3762934907, type: 3}
     - target: {fileID: 6788595168022569962, guid: 3fdbaf3f917ea774eacad190eec862ac, type: 3}
       propertyPath: m_Name
       value: MinimageManager_Rayos
@@ -4086,9 +4098,17 @@ PrefabInstance:
       value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 2154064820385652106, guid: 7a4217eb3eabec4409187d99c56f3bc5, type: 3}
+      propertyPath: correct_SFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d6c36cf9c70fa642a5c6097b51a05de, type: 3}
+    - target: {fileID: 2154064820385652106, guid: 7a4217eb3eabec4409187d99c56f3bc5, type: 3}
       propertyPath: explosiones
       value: 
       objectReference: {fileID: 1872376819}
+    - target: {fileID: 2154064820385652106, guid: 7a4217eb3eabec4409187d99c56f3bc5, type: 3}
+      propertyPath: playerMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: d50883a149acd1b469fc7db499189a20, type: 3}
     - target: {fileID: 2154064820385652106, guid: 7a4217eb3eabec4409187d99c56f3bc5, type: 3}
       propertyPath: puertaInicio
       value: 
@@ -4097,6 +4117,10 @@ PrefabInstance:
       propertyPath: puertaSalida
       value: 
       objectReference: {fileID: 437781362}
+    - target: {fileID: 2154064820385652106, guid: 7a4217eb3eabec4409187d99c56f3bc5, type: 3}
+      propertyPath: suspense_SFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 2581ba74059c7ff41a042e3762934907, type: 3}
     - target: {fileID: 6000616281546734437, guid: 7a4217eb3eabec4409187d99c56f3bc5, type: 3}
       propertyPath: m_Name
       value: MinimageManager_Cajas
