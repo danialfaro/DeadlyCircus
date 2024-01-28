@@ -5,7 +5,7 @@ public class MagoBackground : MonoBehaviour
     public GameObject player;
     public Animator animator;
 
-    public float offset = 5f;
+    public Vector2 offset = Vector2.zero;
 
     float currentJokeTime = 5;
 
@@ -15,7 +15,7 @@ public class MagoBackground : MonoBehaviour
         Vector3 posToFollow = new Vector3(player.transform.position.x, Mathf.Clamp(player.transform.position.y, -5, 20), 0);
         float distanceMultiplier = (transform.position - player.transform.position).magnitude * 0.2f;
 
-        Vector3 smoothPosition = Vector3.Lerp(transform.position, posToFollow + new Vector3(offset, 0, 0), distanceMultiplier * Time.deltaTime);
+        Vector3 smoothPosition = Vector3.Lerp(transform.position, posToFollow + new Vector3(offset.x, offset.y, 0), distanceMultiplier * Time.deltaTime);
 
         transform.position = smoothPosition;
 

@@ -1,17 +1,18 @@
 using System.Collections;
-using System.Collections.Generic;
 using TarodevController;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    SoundController soundController;
+
+    public int contadorLuciernagas;
     public static GameManager Instance { get; private set; }
 
     public Vector2 currentCheckpointPosition;
 
     public bool Pepe_Vivo;
-    public float contadorLuciernagas = 0;
 
     public int checkpoint;
     [SerializeField]
@@ -39,12 +40,15 @@ public class GameManager : MonoBehaviour
         transicion_Animator = GameObject.FindGameObjectWithTag("Transicion").GetComponent<Animator>();
         personaje = GameObject.FindGameObjectWithTag("Player");
 
+        soundController = GameObject.FindGameObjectWithTag("SoundController").GetComponent<SoundController>();
+
         transicion_Animator.gameObject.SetActive(true);
+
     }
 
     private void Update()
     {
-        if(personaje.gameObject.transform.position.y < -15 && Pepe_Vivo)
+        if (personaje.gameObject.transform.position.y < -15 && Pepe_Vivo)
         {
             Morir();
         }
@@ -52,7 +56,7 @@ public class GameManager : MonoBehaviour
 
     public void SetCheckpoint(Vector2 checkpointPosition, int check)
     {
-        if(check >= checkpoint)
+        if (check >= checkpoint)
         {
             currentCheckpointPosition = checkpointPosition;
             checkpoint = check;
@@ -65,7 +69,6 @@ public class GameManager : MonoBehaviour
         Pepe_Vivo = false;
         personaje.GetComponent<Animator>().SetBool("Muerto", true);
         StartCoroutine(Reinicio());
-        contadorLuciernagas = 0;
     }
 
     IEnumerator Reinicio()
@@ -75,7 +78,10 @@ public class GameManager : MonoBehaviour
         transicion_Animator = GameObject.FindGameObjectWithTag("Transicion").GetComponent<Animator>();
         transicion_Animator.SetTrigger("Salir");
 
-        yield return new WaitForSeconds(1.5f);
+        soundController = GameObject.FindGameObjectWithTag("SoundController").GetComponent<SoundController>();
+        soundController.PlayGameOver();
+
+        yield return new WaitForSeconds(3.2f);
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
 
@@ -88,13 +94,13 @@ public class GameManager : MonoBehaviour
         Pepe_Vivo = true;
 
         GameObject[] banderas = GameObject.FindGameObjectsWithTag("Checkpoints");
-        foreach(GameObject bandera in banderas)
+        foreach (GameObject bandera in banderas)
         {
-            if(bandera.GetComponent<Checkpoints>().checkpoint < checkpoint)
+            if (bandera.GetComponent<Checkpoints>().checkpoint < checkpoint)
             {
                 bandera.GetComponent<Checkpoints>().Activar();
             }
-             
+
         }
     }
 }

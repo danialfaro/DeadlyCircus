@@ -1,8 +1,8 @@
-using TarodevController;
 using UnityEngine;
 
 public class Activador_Fuego : MonoBehaviour
 {
+    public ParticleSystem firePS;
     public Animator animator;
 
     GameObject personaje;
@@ -20,6 +20,7 @@ public class Activador_Fuego : MonoBehaviour
         if (Mathf.Abs(personaje.transform.position.x - this.transform.position.x) <= 3f && Mathf.Abs(personaje.transform.position.y - this.transform.position.y) <= 3f)
         {
             animator.SetTrigger("Cerca");
+            if (!firePS.isPlaying) firePS.Play();
             Debug.Log("Trigger activado");
         }
     }
