@@ -8,6 +8,10 @@ public class MinijuegoController_Cajas : MonoBehaviour
     public GameObject puertaInicio;
     public GameObject puertaSalida;
     public TMP_Text texto;
+    public float velocidad = 0.05f;
+    private string textoCompleto1 = "Felicidades Llegaste a tu segundo acertijo.";
+    private string textoCompleto2 = "Adelante, juega con el juguete mas egoista.";
+    public GameObject explosiones;
     public GameObject cajas;
     public bool pruebaSuperada;
     // Start is called before the first frame update
@@ -27,6 +31,7 @@ public class MinijuegoController_Cajas : MonoBehaviour
         {
             StartCoroutine(InicioMinijuego());
             Debug.Log("iniciando Pureba");
+            GetComponent<BoxCollider2D>().enabled = false;
         }
     }
     IEnumerator InicioMinijuego()
@@ -35,7 +40,12 @@ public class MinijuegoController_Cajas : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         puertaInicio.GetComponent<Animator>().SetTrigger("activado");
         puertaSalida.GetComponent<Animator>().SetTrigger("activado");
-        yield return new WaitForSeconds(39f);
+        StartCoroutine(MostrarTextoLetraPorLetra(texto, textoCompleto1));
+        yield return new WaitForSeconds(5f);
+        texto.text = "";
+        StartCoroutine(MostrarTextoLetraPorLetra(texto, textoCompleto2));
+        cajas.SetActive(true);
+        yield return new WaitForSeconds(34f);
         if (!pruebaSuperada)
         {
            PruebaFallida();
@@ -49,7 +59,26 @@ public class MinijuegoController_Cajas : MonoBehaviour
     }
     public void PruebaFallida()
     {
-        cajas.SetActive(true);
+        explosiones.SetActive(true);
         //perderJuego
+        if (GameManager.Instance.Pepe_Vivo)
+        {
+            GameManager.Instance.Morir();
+        }
+        cajas.SetActive(false);
+    }
+    IEnumerator MostrarTextoLetraPorLetra(TMP_Text texto, string textoCompleto)
+    {
+        int longitud = textoCompleto.Length;
+        int indice = 0;
+
+        while (indice < longitud)
+        {
+            texto.text += textoCompleto[indice];
+
+            indice++;
+
+            yield return new WaitForSeconds(velocidad);
+        }
     }
 }
