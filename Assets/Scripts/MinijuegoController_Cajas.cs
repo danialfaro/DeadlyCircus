@@ -37,6 +37,8 @@ public class MinijuegoController_Cajas : MonoBehaviour
     IEnumerator InicioMinijuego()
     {
         texto.enabled = true;
+        puertaInicio.SetActive(true);
+        puertaSalida.SetActive(true);
         yield return new WaitForSeconds(0.1f);
         puertaInicio.GetComponent<Animator>().SetTrigger("activado");
         puertaSalida.GetComponent<Animator>().SetTrigger("activado");
