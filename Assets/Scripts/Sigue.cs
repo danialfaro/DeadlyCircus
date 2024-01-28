@@ -5,6 +5,7 @@ using UnityEngine;
 public class Sigue : MonoBehaviour
 {
     public float count;
+    public GameObject firelightSound;
     private void Update()
     {
         count = GameManager.Instance.contadorLuciernagas;
@@ -25,6 +26,7 @@ public class Sigue : MonoBehaviour
                 Debug.Log("Has muerto");
                 if (GameManager.Instance.Pepe_Vivo)
                 {
+                    firelightSound.SetActive(true);
                     GameManager.Instance.Morir();
                 }
                 

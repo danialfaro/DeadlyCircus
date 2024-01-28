@@ -14,6 +14,10 @@ public class MinijuegoController_Cajas : MonoBehaviour
     public GameObject explosiones;
     public GameObject cajas;
     public bool pruebaSuperada;
+    public AudioSource soundM;
+    public AudioClip suspense_SFX;
+    public AudioClip correct_SFX;
+    public AudioClip playerMusic;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +36,9 @@ public class MinijuegoController_Cajas : MonoBehaviour
             StartCoroutine(InicioMinijuego());
             Debug.Log("iniciando Pureba");
             GetComponent<BoxCollider2D>().enabled = false;
+            soundM = GameObject.Find("SoundM").GetComponent<AudioSource>();
+            soundM.clip = suspense_SFX;
+            soundM.Play();
         }
     }
     IEnumerator InicioMinijuego()
@@ -58,6 +65,9 @@ public class MinijuegoController_Cajas : MonoBehaviour
         pruebaSuperada = true;
         puertaSalida.GetComponent<Animator>().SetTrigger("desactivado");
         texto.enabled = false;
+        soundM.clip = correct_SFX;
+        soundM.Play();
+        StartCoroutine(ReturnToMainMusic());
     }
     public void PruebaFallida()
     {
@@ -82,5 +92,11 @@ public class MinijuegoController_Cajas : MonoBehaviour
 
             yield return new WaitForSeconds(velocidad);
         }
+    }
+    IEnumerator ReturnToMainMusic()
+    {
+        yield return new WaitForSeconds(3f);
+        soundM.clip = playerMusic;
+        soundM.Play();
     }
 }
