@@ -4285,6 +4285,120 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6880682960545620441, guid: e04abdd7fc0b5004ab3ed0e2832e4c4c, type: 3}
   m_PrefabInstance: {fileID: 1452834377}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1493656103
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4965719971579737478, guid: d0de37bc52194544bb79e6d0b6b421fe, type: 3}
+      propertyPath: m_Name
+      value: Luciernaga (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441828657837357301, guid: d0de37bc52194544bb79e6d0b6b421fe, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -24.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441828657837357301, guid: d0de37bc52194544bb79e6d0b6b421fe, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -7.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441828657837357301, guid: d0de37bc52194544bb79e6d0b6b421fe, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441828657837357301, guid: d0de37bc52194544bb79e6d0b6b421fe, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441828657837357301, guid: d0de37bc52194544bb79e6d0b6b421fe, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441828657837357301, guid: d0de37bc52194544bb79e6d0b6b421fe, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441828657837357301, guid: d0de37bc52194544bb79e6d0b6b421fe, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441828657837357301, guid: d0de37bc52194544bb79e6d0b6b421fe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441828657837357301, guid: d0de37bc52194544bb79e6d0b6b421fe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441828657837357301, guid: d0de37bc52194544bb79e6d0b6b421fe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d0de37bc52194544bb79e6d0b6b421fe, type: 3}
+--- !u!1001 &1501538190
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4965719971579737478, guid: d0de37bc52194544bb79e6d0b6b421fe, type: 3}
+      propertyPath: m_Name
+      value: Luciernaga (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441828657837357301, guid: d0de37bc52194544bb79e6d0b6b421fe, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 163
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441828657837357301, guid: d0de37bc52194544bb79e6d0b6b421fe, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 26.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441828657837357301, guid: d0de37bc52194544bb79e6d0b6b421fe, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441828657837357301, guid: d0de37bc52194544bb79e6d0b6b421fe, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441828657837357301, guid: d0de37bc52194544bb79e6d0b6b421fe, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441828657837357301, guid: d0de37bc52194544bb79e6d0b6b421fe, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441828657837357301, guid: d0de37bc52194544bb79e6d0b6b421fe, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441828657837357301, guid: d0de37bc52194544bb79e6d0b6b421fe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441828657837357301, guid: d0de37bc52194544bb79e6d0b6b421fe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441828657837357301, guid: d0de37bc52194544bb79e6d0b6b421fe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d0de37bc52194544bb79e6d0b6b421fe, type: 3}
 --- !u!1001 &1527705907
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5149,6 +5263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentCheckpointPosition: {x: -40, y: 0}
   Pepe_Vivo: 1
+  contadorLuciernagas: 0
   checkpoint: -1
   personaje: {fileID: 1316066306}
   transicion_Animator: {fileID: 898538749}
@@ -5258,7 +5373,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 479770660680982266, guid: 77c05611fcd84e14aa4cac9b133c6f04, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 492301033079890816, guid: 77c05611fcd84e14aa4cac9b133c6f04, type: 3}
       propertyPath: m_Camera
@@ -8214,11 +8329,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6441828657837357301, guid: d0de37bc52194544bb79e6d0b6b421fe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.67
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 6441828657837357301, guid: d0de37bc52194544bb79e6d0b6b421fe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.24
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 6441828657837357301, guid: d0de37bc52194544bb79e6d0b6b421fe, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12481,3 +12596,5 @@ SceneRoots:
   - {fileID: 824083315}
   - {fileID: 7275331211277022238}
   - {fileID: 3294546786945041218}
+  - {fileID: 1493656103}
+  - {fileID: 1501538190}

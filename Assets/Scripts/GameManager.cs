@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public Vector2 currentCheckpointPosition;
 
     public bool Pepe_Vivo;
+    public float contadorLuciernagas = 0;
 
     public int checkpoint;
     [SerializeField]
@@ -64,6 +65,7 @@ public class GameManager : MonoBehaviour
         Pepe_Vivo = false;
         personaje.GetComponent<Animator>().SetBool("Muerto", true);
         StartCoroutine(Reinicio());
+        contadorLuciernagas = 0;
     }
 
     IEnumerator Reinicio()
