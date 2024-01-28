@@ -82,11 +82,11 @@ public class GameManager : MonoBehaviour
         soundController = GameObject.FindGameObjectWithTag("SoundController").GetComponent<SoundController>();
         soundController.PlayGameOver();
 
-        yield return new WaitForSeconds(3.2f);
+        yield return new WaitForSeconds(2.2f);
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
 
         personaje = GameObject.FindGameObjectWithTag("Player");
         personaje.transform.position = currentCheckpointPosition;

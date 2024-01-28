@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2355392953003307952}
   - component: {fileID: 3579034409502298076}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Padre_PlataformaFalsa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
