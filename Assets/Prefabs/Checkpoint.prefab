@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 629906551404491002}
   m_Layer: 0
   m_Name: Checkpoint
-  m_TagString: Untagged
+  m_TagString: Checkpoints
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -165,6 +165,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c77e2b023386e340a80427f91fec8b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  personaje: {fileID: 0}
   animator: {fileID: 4695379947612804363}
   checkpoint: 1
+  activado: 0

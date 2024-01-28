@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Transicion
   - Interactuable
+  - Checkpoints
   layers:
   - Default
   - TransparentFX
