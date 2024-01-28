@@ -1,17 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using TarodevController;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class Rayo_Script : MonoBehaviour
 {
-    public GameObject player;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -23,7 +17,10 @@ public class Rayo_Script : MonoBehaviour
         if(collision.tag.Equals("Player"))
         {
             Debug.Log("Me dio el Rayo");
-            //Game Over
+            if (GameManager.Instance.Pepe_Vivo)
+            {
+                GameManager.Instance.Morir();
+            }
         }
         
     }

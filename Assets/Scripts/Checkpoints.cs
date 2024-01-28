@@ -1,14 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
-using TarodevController;
 using UnityEngine;
 
 public class Checkpoints : MonoBehaviour
 {
-    public GameObject personaje;
+    GameObject personaje;
     public Animator animator;
     public int checkpoint;
-    bool activado = false;
+    public bool activado = false;
+
+    private void Start()
+    {
+        personaje = GameObject.FindGameObjectWithTag("Player");
+    }
 
     // Update is called once per frame
     void Update()
@@ -23,8 +25,14 @@ public class Checkpoints : MonoBehaviour
 
                 Vector2 posicion = new Vector2(transform.position.x, transform.position.y + 1.4f);
 
-                GameManager.Instance.SetCheckpoint(posicion);
+                GameManager.Instance.SetCheckpoint(posicion, checkpoint);
             }
         }
+    }
+
+    public void Activar()
+    {
+        animator.SetTrigger("Cerca");
+        activado = true;
     }
 }

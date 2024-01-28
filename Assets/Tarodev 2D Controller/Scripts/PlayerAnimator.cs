@@ -1,5 +1,4 @@
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace TarodevController
 {
@@ -11,10 +10,10 @@ namespace TarodevController
     public class PlayerAnimator : MonoBehaviour
     {
         [SerializeField] private Animator _anim;
-        [SerializeField] private AudioSource _source;
+        //[SerializeField] private AudioSource _source;
         [SerializeField] private LayerMask _groundMask;
-        [SerializeField] private ParticleSystem _jumpParticles, _launchParticles;
-        [SerializeField] private ParticleSystem _moveParticles, _landParticles;
+        //[SerializeField] private ParticleSystem _jumpParticles, _launchParticles;
+        //[SerializeField] private ParticleSystem _moveParticles, _landParticles;
         [SerializeField] private AudioClip[] _footsteps;
         [SerializeField] private float _maxTilt = .1f;
         [SerializeField] private float _tiltSpeed = 1;
@@ -33,7 +32,7 @@ namespace TarodevController
             if (_player == null) return;
 
             // Flip the sprite
-            if (_player.Input.X != 0) transform.localScale = new Vector3(_player.Input.X > 0 ? 1 : -1, 1, 1);
+            //if (_player.Input.X != 0) transform.localScale = new Vector3(_player.Input.X > 0 ? 1 : -1, 1, 1);
 
             // Lean while running
             var targetRotVector = new Vector3(0, 0, Mathf.Lerp(-_maxTilt, _maxTilt, Mathf.InverseLerp(-1, 1, _player.Input.X)));
@@ -46,7 +45,7 @@ namespace TarodevController
             if (_player.LandingThisFrame)
             {
                 _anim.SetTrigger(GroundedKey);
-                _source.PlayOneShot(_footsteps[Random.Range(0, _footsteps.Length)]);
+                //_source.PlayOneShot(_footsteps[Random.Range(0, _footsteps.Length)]);
             }
 
             // Jump effects
@@ -58,9 +57,9 @@ namespace TarodevController
                 // Only play particles when grounded (avoid coyote)
                 if (_player.Grounded)
                 {
-                    SetColor(_jumpParticles);
-                    SetColor(_launchParticles);
-                    _jumpParticles.Play();
+                    //SetColor(_jumpParticles);
+                    //SetColor(_launchParticles);
+                    //_jumpParticles.Play();
                 }
             }
 
@@ -68,15 +67,15 @@ namespace TarodevController
             if (!_playerGrounded && _player.Grounded)
             {
                 _playerGrounded = true;
-                _moveParticles.Play();
-                _landParticles.transform.localScale = Vector3.one * Mathf.InverseLerp(0, _maxParticleFallSpeed, _movement.y);
-                SetColor(_landParticles);
-                _landParticles.Play();
+                //_moveParticles.Play();
+                //_landParticles.transform.localScale = Vector3.one * Mathf.InverseLerp(0, _maxParticleFallSpeed, _movement.y);
+                //SetColor(_landParticles);
+                //_landParticles.Play();
             }
             else if (_playerGrounded && !_player.Grounded)
             {
                 _playerGrounded = false;
-                _moveParticles.Stop();
+                //_moveParticles.Stop();
             }
 
             // Detect ground color
@@ -84,7 +83,7 @@ namespace TarodevController
             if (groundHit && groundHit.transform.TryGetComponent(out SpriteRenderer r))
             {
                 _currentGradient = new ParticleSystem.MinMaxGradient(r.color * 0.9f, r.color * 1.2f);
-                SetColor(_moveParticles);
+                //SetColor(_moveParticles);
             }
 
             _movement = _player.RawMovement; // Previous frame movement is more valuable
@@ -92,12 +91,12 @@ namespace TarodevController
 
         private void OnDisable()
         {
-            _moveParticles.Stop();
+            //_moveParticles.Stop();
         }
 
         private void OnEnable()
         {
-            _moveParticles.Play();
+            //_moveParticles.Play();
         }
 
         void SetColor(ParticleSystem ps)

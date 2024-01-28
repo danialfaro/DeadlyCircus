@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TarodevController;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,10 +8,11 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    // Añade un nuevo campo para almacenar la posición actual del personaje
     public Vector2 currentCheckpointPosition;
 
     public bool Pepe_Vivo;
+
+    public int checkpoint;
     [SerializeField]
     private GameObject personaje;
     [SerializeField]
@@ -22,7 +24,6 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
 
-            // Buscar el gameobject con tag personaje
             DontDestroyOnLoad(gameObject);
         }
         else
@@ -36,15 +37,30 @@ public class GameManager : MonoBehaviour
     {
         transicion_Animator = GameObject.FindGameObjectWithTag("Transicion").GetComponent<Animator>();
         personaje = GameObject.FindGameObjectWithTag("Player");
+
+        transicion_Animator.gameObject.SetActive(true);
     }
 
-    public void SetCheckpoint(Vector2 checkpointPosition)
+    private void Update()
     {
-        currentCheckpointPosition = checkpointPosition;
+        if(personaje.gameObject.transform.position.y < -15 && Pepe_Vivo)
+        {
+            Morir();
+        }
+    }
+
+    public void SetCheckpoint(Vector2 checkpointPosition, int check)
+    {
+        if(check >= checkpoint)
+        {
+            currentCheckpointPosition = checkpointPosition;
+            checkpoint = check;
+        }
     }
 
     public void Morir()
     {
+        personaje.GetComponent<PlayerController>().enabled = false;
         Pepe_Vivo = false;
         personaje.GetComponent<Animator>().SetBool("Muerto", true);
         StartCoroutine(Reinicio());
@@ -59,7 +75,6 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSeconds(1.5f);
 
-        // Al reiniciar, carga la escena y luego ajusta la posición del personaje al último checkpoint
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
 
         yield return new WaitForSeconds(1f);
@@ -67,8 +82,17 @@ public class GameManager : MonoBehaviour
         personaje = GameObject.FindGameObjectWithTag("Player");
         personaje.transform.position = currentCheckpointPosition;
 
-        // Reinicia cualquier otro estado necesario (por ejemplo, animaciones, variables)
         personaje.GetComponent<Animator>().SetBool("Muerto", false);
         Pepe_Vivo = true;
+
+        GameObject[] banderas = GameObject.FindGameObjectsWithTag("Checkpoints");
+        foreach(GameObject bandera in banderas)
+        {
+            if(bandera.GetComponent<Checkpoints>().checkpoint < checkpoint)
+            {
+                bandera.GetComponent<Checkpoints>().Activar();
+            }
+             
+        }
     }
 }
