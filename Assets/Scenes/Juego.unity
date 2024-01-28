@@ -3721,6 +3721,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1592046977130246548, guid: b62675446b4c35e4e8f9eae94625e49c, type: 3}
+      propertyPath: m_Volume
+      value: 0.506
+      objectReference: {fileID: 0}
+    - target: {fileID: 1592046977130246548, guid: b62675446b4c35e4e8f9eae94625e49c, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 1335061636935365436, guid: 55b2261f8d8e97a4087991f081f30e34, type: 2}
     - target: {fileID: 4995016565935867850, guid: b62675446b4c35e4e8f9eae94625e49c, type: 3}
       propertyPath: m_Name
       value: SoundM
@@ -5679,6 +5687,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7624029298205496256, guid: eca22ad817a898c45aa92506a988b271, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 4094584429788229022, guid: 55b2261f8d8e97a4087991f081f30e34, type: 2}
     m_RemovedComponents:
     - {fileID: 8038069069173658401, guid: eca22ad817a898c45aa92506a988b271, type: 3}
     m_RemovedGameObjects: []
