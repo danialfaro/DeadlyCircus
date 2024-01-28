@@ -369,6 +369,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PadreBarrera (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2252683896825815795, guid: 0daec8eca9d05ae4b8d6350148bf5191, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -957456720, guid: 9561edbbb798f3c4a9442c240fb8d40a, type: 3}
     - target: {fileID: 3656693949805268623, guid: 0daec8eca9d05ae4b8d6350148bf5191, type: 3}
       propertyPath: m_LocalPosition.x
       value: 62.45494
@@ -5348,6 +5352,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1194586502931927334, guid: 77c05611fcd84e14aa4cac9b133c6f04, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ed2cf094df594ea418ea41b0cc31c013, type: 3}
     - target: {fileID: 3882895101510392883, guid: 77c05611fcd84e14aa4cac9b133c6f04, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
